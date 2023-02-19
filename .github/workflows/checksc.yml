@@ -2,6 +2,9 @@
 
 name: Basic Workflow Example
 
+env: # set secret as env var
+  SCRT: ${{ secrets.push2docs }}
+
 # Controls when the workflow will run
 on:
   
@@ -22,12 +25,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script and check scrt
-        env: # set secret as env var
-          scrt: ${{ secrets.push2docs }}
       
         run:  | 
           echo 'The GitHub Action Secret will be masked:  '
-          echo ${{ secrets.push2docs }}
+          echo $SCRT
       
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
