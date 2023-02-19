@@ -32,6 +32,8 @@ jobs:
         with:
           personal_token: ${{ secrets.push2docs }}
           src_path: docs/.
+          src_branch: main
           dst_repo_name: landscaper-docs
           dst_owner: in-ko
           dst_path: /docs/test/
+          dst_branch: main
